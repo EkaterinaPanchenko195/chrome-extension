@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Weather",
+  "description": "displaying weather in the selected region by pressing a button",
+  "version": "1.0.0",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_title": "Click Me",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.npr.org/*"],
+      "match_origin_as_fallback": true,
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_page": "options.html"
+}
